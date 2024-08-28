@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    char *quotes[] = {
+        "The only way to do great work is to love what you do.",
+        "Don't be afraid to give up the good to pursue the great.",
+        "You can't climb the ladder of success with your hands in your pockets.",
+        "The best time to plant a tree was twenty years ago. The second best time is now.",
+        "Believe you can and you're halfway there.",
+        "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+        "If you don't like something, change it. If you can't change it, change your attitude.",
+        "The only person you are destined to become is the person you decide to be.",
+        "Life is what happens while you're busy making other plans.",
+        "The greatest discovery of my generation is that human beings can alter their lives by altering their attitudes of mind."
+    };
+
+    int num_quotes = sizeof(quotes) / sizeof(quotes[0]);
+
+    srand(time(NULL));
+    int random_index = rand() % num_quotes;
+
+    printf("%s\n", quotes[random_index]);
+
+    return 0;
+}
