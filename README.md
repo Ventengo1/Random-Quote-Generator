@@ -4,3 +4,5 @@ Go to this link to see the code and the output: https://onecompiler.com/c/42qhrx
 
 
 This program is written in C.
+
+I came up with these quotes by myself by using other quotes I found on the web and made changes to them.
