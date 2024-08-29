@@ -12,40 +12,24 @@ int main() {
         "The best time to plant a tree was twenty years ago. The second best time is today.",
         "Believe you can and you are halfway there.",
         "Life is like surfing, the fall doesn't matter but the ride does.",
-        "If you don't like something, change it. If you can't change it, change your attitude.",
-        "The only person you are destined to become is the person you decide to be.",
-        "Life is what happens while you're busy making other plans.",
-        "The greatest discovery of my generation is that human beings can alter their lives by altering their attitudes of mind.",
+        "If you see it, you can be it.",
+        "The only person you're destined to become is the person you decide to be.",
+        "Life is like the weather except it doesn't have a forecast.",
         "The canvas of life is boundless; with imagination as your brush, every stroke can paint the extraordinary.",
-        "Rather than counting your coins, measure your wealth by the lives you've touched and the hearts you've inspired.",
-        "True riches lie not in the abundance of possessions, but in the abundance of purpose that breathes life into the fleeting currency of time.",
-        "The future belongs to those who believe in the beauty of their dreams.",
-        "Never let anyone tell you that you can't do something. Set your mind to it and do it.",
-        "The only limit to our realization of tomorrow will be our doubts of today.",
-        "If you can dream it, you can achieve it.",
-        "The greatest glory in living lies not in never falling, but in rising every time we fall.",
-        "Believe you can and you're halfway there.",
-        "The best time to plant a tree was twenty years ago. The second best time is now.",
-        "The only way to do great work is to love what you do.",
-        "Don't be afraid to give up the good to pursue the great.",
-        "You can't climb the ladder of success with your hands in your pockets.",
-        "The best time to plant a tree was twenty years ago. The second best time is now.",
-        "Believe you can and you're halfway there.",
-        "The greatest glory in living lies not in never falling, but in rising every time we fall.",
-        "If you don't like something, change it. If you can't change it, change your attitude.",
-        "The only person you are destined to become is the person you decide to be.",
-        "Life is what happens while you're busy making other plans.",
-        "The greatest discovery of my generation is that human beings can alter their lives by altering their attitudes of mind.",
-        "The canvas of life is boundless; with imagination as your brush, every stroke can paint the extraordinary.",
-        "Rather than counting your coins, measure your wealth by the lives you've touched and the hearts you've inspired.",
-        "True riches lie not in the abundance of possessions, but in the abundance of purpose that breathes life into the fleeting currency of time.",
-        "The future belongs to those who believe in the beauty of their dreams.",
-        "Never let anyone tell you that you can't do something. Set your mind to it and do it.",
-        "The only limit to our realization of tomorrow will be our doubts of today.",
-        "If you can dream it, you can achieve it.",
-        "The greatest glory in living lies not in never falling, but in rising every time we fall.",
-        "Believe you can and you're halfway there.",
-        "The best time to plant a tree was twenty years ago. The second best time is now.",
+        "Money is a currency but so is love.",
+        "If money is a bush, love and compansion is a tree.",
+        "The ones who rule the future believe in the beauty of their dreams.",
+        "The haters gonna hate but keep yoru mind straight. Their hate means their afraid.",
+        "Dream big, do bigger.",
+        "What's done is done, but what you do is not.",
+        "Those who can trustothers are great, but thsoe who can also trust themselves are the greatest.",
+        "If you see it, go be it.",
+        "They say go with the flow, instead go with the mojo.",
+        "Why stop unless you're done.",
+        "The medal holds the glory, but the finish lines holds the vicotry.",
+        "Prizes lasts for years, but the experience lasts for a lifetime.",
+        "They ask me what my work is, I say fun. They ask me what my fun is, I say work.",
+        "They say the trophy is for remerberance, but really its the game."
     };
 
     int num_quotes = sizeof(quotes) / sizeof(quotes[0]);
@@ -54,9 +38,9 @@ int main() {
 
     while (1) {
         printf("\nChoose an option:\n");
-        printf("1. Get a random quote\n");
-        printf("2. Suggest a quote\n");
-        printf("3. Exit\n");
+        printf("1: Get a random quote\n");
+        printf("2: Similar quotes to specific word/phrase\n");
+        printf("3: Exit\n");
 
         int choice;
         scanf("%d", &choice);
@@ -64,10 +48,10 @@ int main() {
         switch (choice) {
             case 1:
                 int random_index = rand() % num_quotes;
-                printf("\nHere's a random quote:\n\"%s\"\n", quotes[random_index]);
+                printf("\nHere's a random quote :\n\"%s\"\n", quotes[random_index]);
                 break;
             case 2:
-                printf("\nEnter your keyword or phrase:\n");
+                printf("\nEnter your keyword or phrase to find a similar quote:\n");
                 char keyword[100];
                 scanf("%s", keyword);
 
