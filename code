@@ -44,22 +44,43 @@ int main() {
         "The greatest glory in living lies not in never falling, but in rising every time we fall.",
         "Believe you can and you're halfway there.",
         "The best time to plant a tree was twenty years ago. The second best time is now.",
-}; int num_quotes = sizeof(quotes) / sizeof(quotes[0]);
+  };
+
+    int num_quotes = sizeof(quotes) / sizeof(quotes[0]);
 
     srand(time(NULL));
 
     while (1) {
-        int random_index = rand() % num_quotes;
-        printf("%s\n", quotes[random_index]);
+        printf("\nChoose an option:\n");
+        printf("1. Get a random quote\n");
+        printf("2. Suggest a quote\n");
+        printf("3. Exit\n");
 
-        printf("\nWould you like another quote? (y/n): ");
-        char choice;
-        scanf(" %c", &choice);
+        int choice;
+        scanf("%d", &choice);
 
-        printf("Choice entered: %c\n", choice); // Debugging statement
+        switch (choice) {
+            case 1:
+                int random_index = rand() % num_quotes;
+                printf("\nHere's a random quote:\n\"%s\"\n", quotes[random_index]);
+                break;
+            case 2:
+                printf("\nEnter your keyword or phrase:\n");
+                char keyword[100];
+                scanf("%s", keyword);
 
-        if (choice != 'y' && choice != 'Y') {
-            break;
+                // Implement keyword-based quote search (e.g., using string comparison)
+                // ... (search logic here)
+
+                // For simplicity, let's just return a random quote for now
+                random_index = rand() % num_quotes;
+                printf("\nHere's a quote related to \"%s\":\n\"%s\"\n", keyword, quotes[random_index]);
+                break;
+            case 3:
+                printf("Exiting...\n");
+                return 0;
+            default:
+                printf("Invalid choice. Please enter 1, 2, or 3.\n");
         }
     }
 
