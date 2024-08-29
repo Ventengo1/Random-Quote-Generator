@@ -2,14 +2,16 @@
 #include <stdlib.h>
 #include <time.h>
 
+#define MAX_QUOTES 100
+
 int main() {
     char *quotes[] = {
-        "The only way to do great work is to love what you do.",
-        "Don't be afraid to give up the good to pursue the great.",
-        "You can't climb the ladder of success with your hands in your pockets.",
-        "The best time to plant a tree was twenty years ago. The second best time is now.",
-        "Believe you can and you're halfway there.",
-        "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+        "The only way to do great work is to do what you love.",
+        "Don't be afraid to step back from the good to pursue the great.",
+        "You can't climb the ladder with your hands in your pockets.",
+        "The best time to plant a tree was twenty years ago. The second best time is today.",
+        "Believe you can and you are halfway there.",
+        "Life is like surfing, the fall doesn't matter but the ride does.",
         "If you don't like something, change it. If you can't change it, change your attitude.",
         "The only person you are destined to become is the person you decide to be.",
         "Life is what happens while you're busy making other plans.",
@@ -44,7 +46,7 @@ int main() {
         "The greatest glory in living lies not in never falling, but in rising every time we fall.",
         "Believe you can and you're halfway there.",
         "The best time to plant a tree was twenty years ago. The second best time is now.",
-  };
+    };
 
     int num_quotes = sizeof(quotes) / sizeof(quotes[0]);
 
@@ -69,12 +71,27 @@ int main() {
                 char keyword[100];
                 scanf("%s", keyword);
 
-                // Implement keyword-based quote search (e.g., using string comparison)
-                // ... (search logic here)
+                // Implement keyword-based quote search
+                int best_match_index = -1;
+                int best_match_score = 0;
+                for (int i = 0; i < num_quotes; i++) {
+                    int score = 0;
+                    char *p = strstr(quotes[i], keyword);
+                    while (p != NULL) {
+                        score++;
+                        p = strstr(p + 1, keyword);
+                    }
+                    if (score > best_match_score) {
+                        best_match_index = i;
+                        best_match_score = score;
+                    }
+                }
 
-                // For simplicity, let's just return a random quote for now
-                random_index = rand() % num_quotes;
-                printf("\nHere's a quote related to \"%s\":\n\"%s\"\n", keyword, quotes[random_index]);
+                if (best_match_index != -1) {
+                    printf("\nHere's a quote related to \"%s\":\n\"%s\"\n", keyword, quotes[best_match_index]);
+                } else {
+                    printf("\nNo matching quotes found for \"%s\".\n", keyword);
+                }
                 break;
             case 3:
                 printf("Exiting...\n");
@@ -84,5 +101,4 @@ int main() {
         }
     }
 
-    return 0;
 }
