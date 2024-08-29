@@ -5,4 +5,4 @@ Go to this link to see the code and the output:https://www.programiz.com/online-
 
 This program is written in C.
 
-I modified some fo the quotes that I found on the web and used AI for inspiration but none of the quotes are fully from the web or fully AI.
+I modified some fo the quotes that I found on the web and used AI for inspiration but NONE of the quotes are fully from the web or fully AI.
