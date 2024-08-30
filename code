@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 #define MAX_QUOTES 100
 
@@ -39,7 +40,7 @@ int main() {
     while (1) {
         printf("\nChoose an option:\n");
         printf("1. Get a random quote\n");
-        printf("2. Suggest a quote\n");
+        printf("2. Find a quote similar to a word/phrase\n");
         printf("3. Create your own quote\n");
         printf("4. Exit\n");
 
@@ -56,7 +57,7 @@ int main() {
                 char keyword[100];
                 scanf("%s", keyword);
 
-                
+                // Implement keyword-based quote search
                 int best_match_index = -1;
                 int best_match_score = 0;
                 for (int i = 0; i < num_quotes; i++) {
@@ -83,17 +84,25 @@ int main() {
                 char custom_quote[256];
                 scanf(" %[^\n]", custom_quote);
 
-                
-                if (num_quotes < MAX_QUOTES) {
-                    strcpy(quotes[num_quotes], custom_quote);
-                    num_quotes++;
-                    printf("\nYour quote has been added.\n");
-                } else {
+                // Check if quote limit is reached
+                if (num_quotes >= MAX_QUOTES) {
                     printf("\nQuote limit reached.\n");
+                    break;
                 }
+
+                // Check if quote is too long
+                if (strlen(custom_quote) >= 256) {
+                    printf("\nQuote is too long.\n");
+                    break;
+                }
+
+                strcpy(quotes[num_quotes], custom_quote);
+                num_quotes++;
+                printf("\nYour quote has been added.\n");
                 break;
             case 4:
-                printf("Exiting... Please come back soon, or else...\n");
+                printf("Exiting...Please come back soon... or else\n");
+                printf("'Pain is temporary. Quitting lasts forever. - Lance Armstrong Sally Jenkins'");
                 return 0;
             default:
                 printf("Invalid choice. Please enter 1, 2, 3, or 4.\n");
