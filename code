@@ -39,10 +39,11 @@ int main() {
 
     while (1) {
         printf("\nChoose an option:\n");
-        printf("1. Get a random quote\n");
-        printf("2. Find a quote similar to a word/phrase\n");
-        printf("3. Create your own quote\n");
-        printf("4. Exit\n");
+        printf("1: Get a random quote\n");
+        printf("2: Find a quote similar to a word/phrase\n");
+        printf("3: Create your own quote\n");
+        printf("4: Exit\n");
+        printf("5: Tell us what you think\n");
 
         int choice;
         scanf("%d", &choice);
@@ -103,8 +104,12 @@ int main() {
             case 4:
                 printf("Exiting...Please come back soon... or else\n");
                 printf("'Pain is temporary. Quitting lasts forever. - Lance Armstrong Sally Jenkins'");
-                return 0;
-            default:
+         case 5:
+                printf("Leave your feedback here: ");
+             char feedback[100];
+                scanf("%[^\n]", feedback);
+                printf("\nThank you for your feedback!", feedback);
+                break;
                 printf("Invalid choice. Please enter 1, 2, 3, or 4.\n");
         }
     }
